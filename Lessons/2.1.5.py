@@ -29,7 +29,7 @@ try:
     robot_radio = browser.find_element(By.ID, 'robotsRule')
     robot_radio.click()
 
-    button = browser.find_element_by_xpath("//button[text()='Submit']")
+    button = browser.find_element(By.XPATH, "//button[text()='Submit']")
     button.click()
 
 finally:
