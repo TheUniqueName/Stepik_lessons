@@ -24,16 +24,14 @@ try:
     submit_button.click()
 
     result_message = WebDriverWait(browser, 15).until(
-        EC.presence_of_element_located((By.CSS_SELECTOR, ".attempt__message .smart-hints__hint"))
+        EC.presence_of_element_located((By.CSS_SELECTOR, ".smart-hints__hint"))
     )
-    print('1')
-    print(result_message)
     result_text = result_message.text
 
 
 finally:
     # успеваем скопировать код за 30 секунд
     print(result_text)
-    time.sleep(25)
+    # time.sleep(25)
     # закрываем браузер после всех манипуляций
     browser.quit()
