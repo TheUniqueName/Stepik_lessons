@@ -1,24 +1,9 @@
 import pytest
-from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.chrome.service import Service
 import time
 import math
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-
-
-@pytest.fixture(scope="session")
-def browser():
-    print("\nstart browser for test..")
-    option = webdriver.ChromeOptions()
-    # option.add_argument("--headless")
-    option.add_argument("--disable-gpu")
-    browser = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=option)
-    yield browser
-    print("\nquit browser..")
-    browser.quit()
 
 
 @pytest.mark.parametrize('pages', ["236895", "236896", "236897", "236898", "236899", "236903", "236904", "236905"])
