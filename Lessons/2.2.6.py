@@ -3,7 +3,6 @@ import time
 import math
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.select import Select
 
 
 def calc(x):
@@ -22,7 +21,7 @@ try:
     number = int(num)
     result_sum = calc(number)
 
-    button = browser.find_element_by_tag_name("button")
+    button = browser.find_element(By.TAG_NAME, "button")
     browser.execute_script("return arguments[0].scrollIntoView(true);", button)
 
     answer_input = browser.find_element(By.ID, 'answer')
@@ -34,7 +33,7 @@ try:
     robot_radio = browser.find_element(By.ID, 'robotsRule')
     robot_radio.click()
 
-    button = browser.find_element_by_xpath("//button[text()='Submit']")
+    button = browser.find_element(By.XPATH, "//button[text()='Submit']")
     button.click()
 
 
